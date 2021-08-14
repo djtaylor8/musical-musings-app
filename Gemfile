@@ -55,6 +55,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# RSpotify API wrapper
 gem 'rack-cors'
 gem 'active_model_serializers'
 gem 'rspotify'
+
+#bootstrap
+gem 'bootstrap', '~> 5.0.1'
+gem 'jquery-rails'

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/home', to: 'welcome#home'
+  root :to => 'welcome#home'
+  
   resources :songs
   resources :comments
   resources :playlists
