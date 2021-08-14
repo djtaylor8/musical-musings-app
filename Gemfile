@@ -63,3 +63,4 @@ gem 'rspotify'
 #bootstrap
 gem 'bootstrap', '~> 5.0.1'
 gem 'jquery-rails'
+gem 'bootstrap_form', '~> 4.0'
