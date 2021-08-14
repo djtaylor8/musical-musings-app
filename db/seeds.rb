@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+spotify_tracks = RSpotify::Playlist.browse_featured.first.tracks 
+
+spotify_tracks.each do |song|
+    Song.create!(
+        title: song.name,
+        artist: song.artists[0].name,
+        genre: song.artists[0].genres[0],
+        image: song.album.images[0]["url"],
+        preview: song.preview_url 
+    )
+end
+
+User.create!(name: "Lou", email: "lou@me.com", password: "hi")
