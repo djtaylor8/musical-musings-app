@@ -1,0 +1,27 @@
+<h2><%= @playlist.title %></h2>
+<p><%= @playlist.story %></p>
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+  <th scope="col">Name </th>
+  <th scope="col">Artist</th>
+  <th scope="col">Genre</th>
+  <th scope="col">Preview</th>
+</tr>
+</thead>
+<tbody>
+<% @playlist.songs.each do |song| %>
+<tr>
+  <td><%= song.name %></td>
+  <td><%= song.artist %></td>
+  <td><%= song.genre %></td>
+  <td><iframe src="https://open.spotify.com/embed/track/<%= song.spotify_id %>" width="100%" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</td>
+</tr>
+<% end %>
+</tbody>
+</table>
+</div>
+
+

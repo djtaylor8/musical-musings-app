@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_14_194250) do
+ActiveRecord::Schema.define(version: 2021_08_15_055755) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2021_08_14_194250) do
     t.string "preview"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "spotify_id"
   end
 
   create_table "users", force: :cascade do |t|
