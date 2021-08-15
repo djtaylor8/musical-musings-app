@@ -1,0 +1,8 @@
+<h1>Create New Playlist</h1>
+<%= bootstrap_form_for(@playlist) do |f| %>
+<%= f.text_field :title, label_as_placeholder: true %>
+<br>
+<%= f.text_area :story, label_as_placeholder: true %>
+<br>
+<%= f.submit "Submit" %>
+<% end %>
