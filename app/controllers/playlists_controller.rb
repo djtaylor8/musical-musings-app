@@ -5,7 +5,7 @@ class PlaylistsController < ApplicationController
     end
 
     def new 
-      @playlist = Playlist.new 
+      @playlist = Playlist.new
     end
 
     def create 
@@ -28,6 +28,7 @@ class PlaylistsController < ApplicationController
         end
        else
         @playlist = Playlist.find(params[:id])
+        @comment = @playlist.comments.build
        end
     end
 
@@ -58,7 +59,7 @@ class PlaylistsController < ApplicationController
     private
 
     def playlist_params
-      params.require(:playlist).permit(:title, :story, :name, :artist, :genre, :spotify_id, :preview_url, :songs_attributes => [:name, :artist, :genre, :id, :_destroy])
+      params.require(:playlist).permit(:title, :story, :songs_attributes => [:name, :artist, :genre, :id, :_destroy])
     end
 
 end

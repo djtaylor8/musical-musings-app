@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :sessions 
   resources :songs
   resources :comments
-  resources :playlists
+  resources :playlists do 
+    resources :comments 
+  end
   resources :users do 
     resources :playlists
   end

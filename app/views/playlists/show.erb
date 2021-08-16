@@ -30,4 +30,17 @@
 <%= link_to "Delete Playlist", playlist_path(@playlist), data: {method: :delete}, style: 'color:#FFFFFF;' %>
 </div>
 
+<section class="section comments">
+    <div class="container">
+        <h2 class="subtitle is-5"><strong><%= @playlist.comments.count %></strong> Comments</h2>
+        <%= render @playlist.comments %>
+        <div class="comment-form">
+            <hr />
+            <h3 class="subtitle is-3">Leave a comment</h3>
+             <%= render 'comments/form', locals: { comment: @comment } %>
+        </div>
+    </div>
+</section>
+
+
 

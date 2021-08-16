@@ -1,9 +1,9 @@
 class Search < ApplicationRecord
 
     def find_songs(keywords)
-      song_results = RSpotify::Track.search("#{keywords}")
-      new_songs = song_results.first(7).map do |song|
-        Song.create!(
+      search_results = RSpotify::Track.search("#{keywords}")
+      songs = search_results.first(7).map do |song|
+        Song.find_or_create_by(
             name: song.name,
             artist: song.artists[0].name,
             genre: song.artists[0].genres[0],
@@ -12,7 +12,7 @@ class Search < ApplicationRecord
             spotify_id: song.id  
             )
         end
-        new_songs 
+        songs 
     end
 
 end
