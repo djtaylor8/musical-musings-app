@@ -28,7 +28,6 @@ class PlaylistsController < ApplicationController
         end
        else
         @playlist = Playlist.find(params[:id])
-        @comment = @playlist.comments.build
        end
     end
 

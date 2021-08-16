@@ -1,10 +1,16 @@
 class CommentsController < ApplicationController
     
+    def index  
+      @playlist = Playlist.find(params[:playlist_id])
+      @comment = @playlist.comments.build
+    end
+    
     def create
       @playlist = Playlist.find(params[:playlist_id])
       @comment = @playlist.comments.create!(comment_params)
-      byebug
-      redirect_to playlist_path(@playlist)
+      @comment.user = current_user 
+      @comment.save
+      redirect_to playlist_comments_path(@playlist)
     end
 
     def destroy 
@@ -17,7 +23,7 @@ class CommentsController < ApplicationController
     private 
 
     def comment_params
-      params.require(:comment).permit(:content, :playlist_id)
+      params.require(:comment).permit(:content, :playlist_id, :user_id)
     end
 
 end
