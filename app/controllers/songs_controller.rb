@@ -7,8 +7,6 @@ class SongsController < ApplicationController
     def create 
       @song = Song.find_by(params[:id]) 
       @playlist = Playlist.find_by(title: params[:playlist][:title])
-      @playlist.songs << @song 
-      @playlist.save 
       redirect_to playlist_path(@playlist)
     end
 

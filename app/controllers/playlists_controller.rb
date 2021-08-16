@@ -32,10 +32,18 @@ class PlaylistsController < ApplicationController
        end
     end
 
+    def update
+      @playlist = Playlist.find(params[:id])
+      @song = Song.find_by(id: params[:playlist][:song])
+      @playlist.songs << @song 
+      @playlist.save 
+      redirect_to playlist_path(@playlist)
+    end
+
     private
 
     def playlist_params
-      params.require(:playlist).permit(:title, :story, :artist, :genre, :spotify_id, :preview_url)
+      params.require(:playlist).permit(:title, :story, :name, :artist, :genre, :spotify_id, :preview_url)
     end
 
 end
