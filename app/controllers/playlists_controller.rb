@@ -9,15 +9,14 @@ class PlaylistsController < ApplicationController
     end
 
     def create 
-      @playlist = Playlist.new(song_params)
-      if params[:user_id]
-        @user = User.find_by(id: params[:user_id])
-        @playlist.user = @user
-        @playlist.save 
-        redirect_to user_playlist_path(@playlist)
+      @playlist = Playlist.new(playlist_params)
+      @playlist.user = current_user  
+
+      if @playlist.save 
+        redirect_to playlist_path(@playlist)
       else
-        redirect_to root_url 
-      end 
+        render :new
+      end
     end
     
     def show 
@@ -32,12 +31,26 @@ class PlaylistsController < ApplicationController
        end
     end
 
+    def edit
+      @playlist = Playlist.find(params[:id])
+    end
+
     def update
       @playlist = Playlist.find(params[:id])
-      @song = Song.find_by(id: params[:playlist][:song])
-      @playlist.songs << @song 
-      @playlist.save 
+      if params[:playlist][:song] 
+        @song = Song.find_by(id: params[:playlist][:song])
+        @playlist.songs << @song 
+        @playlist.save
+      else
+        @playlist.update(playlist_params)
+      end 
       redirect_to playlist_path(@playlist)
+    end
+
+    def destroy 
+      @playlist = Playlist.find(params[:id])
+      @playlist.destroy 
+      redirect_to user_path(current_user)
     end
 
     private

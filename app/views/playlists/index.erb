@@ -1,0 +1,6 @@
+<% @playlists.each do |p| %>
+<div> <%= p.user.name %> - <%= link_to p.title, playlist_path(p) %>  
+<% end %>
+</div>
+
+

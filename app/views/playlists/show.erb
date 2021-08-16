@@ -1,8 +1,10 @@
+<div>
 <h2><%= @playlist.title %></h2>
 <p><%= @playlist.story %></p>
-<%= link_to "Add Songs", new_search_path %>
-<div class="table-responsive">
-<table class="table">
+</div>
+
+<div class="table-wrapper-scroll-y my-custom-scrollbar align-content-center">
+<table class="table table-sm">
 <thead>
 <tr>
   <th scope="col">Song Name </th>
@@ -23,6 +25,9 @@
 <% end %>
 </tbody>
 </table>
+<%= link_to "Add Songs", new_search_path, style: 'color:#FFFFFF;' %>
+<%= link_to "Edit Playlist", edit_playlist_path(@playlist), style: 'color:#FFFFFF;' %>
+<%= link_to "Delete Playlist", playlist_path(@playlist), data: {method: :delete}, style: 'color:#FFFFFF;' %>
 </div>
 
 

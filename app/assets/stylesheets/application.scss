@@ -24,4 +24,18 @@
   iframe {
     opacity: 0.8;
   }
+
+  .my-custom-scrollbar {
+    position: relative;
+    margin-top: 20px;
+    bottom: 0;
+    height: 45vh;
+    overflow: auto;
+    }
+
+  .table-wrapper-scroll-y {
+    display: block;
+    }
+
+    
   

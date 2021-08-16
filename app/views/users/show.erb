@@ -7,7 +7,6 @@
     <h5 class="card-title"><%= playlist.title %></h5>
     <a href="<%= user_playlist_path(@user, playlist) %>" class="btn btn-primary">View Playlist</a>
   </div>
+  <% end %>
 </div>
 <%= link_to "Create Playlist", new_playlist_path %>
-
-<% end %>
