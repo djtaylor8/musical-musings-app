@@ -65,3 +65,9 @@ gem 'bootstrap', '~> 5.0.1'
 gem 'jquery-rails'
 gem 'bootstrap_form', '~> 4.0'
 gem 'nested_form'
+
+#omniauth
+gem 'omniauth'
+gem 'omniauth-spotify'
+gem 'omniauth-rails_csrf_protection'
+gem 'dotenv-rails'
