@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
       @playlist = Playlist.find(params[:playlist_id])
       @comment = @playlist.comments.find(params[:id])
       @comment.destroy 
-      redirect_to playlist_path(@playlist)
+      redirect_to playlist_comments_path(@playlist)
     end
 
     private 

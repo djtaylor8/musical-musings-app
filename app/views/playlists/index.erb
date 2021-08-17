@@ -1,6 +1,13 @@
+<div class="card-deck">
+
 <% @playlists.each do |p| %>
-<div> <%= p.user.name %> - <%= link_to p.title, playlist_path(p) %>  
-<% end %>
+<div class="card border-primary mb-3" style="width: 20rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= p.title %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= p.user.name %></h6>
+    <a href="<%= playlist_path(p) %>" class="card-link">View Playlist</a>
+  </div>
 </div>
+<% end %>
 
-
+</div>
