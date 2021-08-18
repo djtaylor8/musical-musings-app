@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
         user = User.from_omniauth(request.env["omniauth.auth"])
         session[:user_id] = user.id
       else 
-        user = User.find_by(name: params[:name])
+        user = User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
         session[:user_id] = user.id
         end 

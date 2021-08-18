@@ -26,7 +26,7 @@
 </tbody>
 </table>
 <%= link_to "Add Songs", new_search_path, style: 'color:#FFFFFF;' %>
-<%= link_to "Edit Playlist", edit_playlist_path(@playlist), style: 'color:#FFFFFF;' %>
+<%= link_to "Edit Playlist", edit_user_playlist_path(@playlist), style: 'color:#FFFFFF;' %>
 <%= link_to "Delete Playlist", playlist_path(@playlist), data: {method: :delete}, style: 'color:#FFFFFF;' %>
 <%= link_to "Comments", playlist_comments_path(@playlist), style: 'color:#FFFFFF;' %>
 </div>

@@ -8,9 +8,9 @@
       <li class="nav-item active">
         <a class="nav-link" href="<%= root_url %>">Home</a>
       </li>
-      <% if @user %>
+      <% if current_user %>
       <li class="nav-item">
-        <a class="nav-link" href="<%= user_path(@user) %>"><%= @user.name %>'s Profile</a>
+        <a class="nav-link" href="<%= user_path(current_user) %>"><%= current_user.name %>'s Profile</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<%= logout_path %>">Log Out</a>
