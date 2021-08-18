@@ -1,0 +1,11 @@
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h4><%= pluralize(@user.errors.count, "error") %> - please try again!</h4>
+
+    <ul>
+      <% @user.errors.each do |error| %>
+        <div><%= error.full_message %></div>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

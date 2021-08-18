@@ -3,7 +3,10 @@ require 'securerandom'
 class User < ApplicationRecord
     has_many :playlists
     has_many :comments
-    has_many :playlist_comments, :through => :playlists, :source => :comments 
+    has_many :playlist_comments, :through => :playlists, :source => :comments
+    
+    validates :name, :email, presence: true
+    validates :bio, length: { maximum: 500, too_long: "%{count} characters is the maximum allowed" }
 
     has_secure_password
 
