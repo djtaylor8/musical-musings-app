@@ -1,6 +1,6 @@
 OmniAuth.config.logger = Rails.logger
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :spotify, ENV['SPOTIFY_KEY'], ENV['SPOTIFY_SECRET']
+  provider :google_oauth2, ENV['GOOGLE_KEY'], ENV['GOOGLE_SECRET']
 end
   

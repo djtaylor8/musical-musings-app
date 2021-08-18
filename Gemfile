@@ -67,7 +67,6 @@ gem 'bootstrap_form', '~> 4.0'
 gem 'nested_form'
 
 #omniauth
-gem 'omniauth'
-gem 'omniauth-spotify'
-gem 'omniauth-rails_csrf_protection'
-gem 'dotenv-rails'
+gem 'omniauth-google-oauth2', '~> 0.8.2'
+
+gem 'figaro'

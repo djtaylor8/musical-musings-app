@@ -2,10 +2,11 @@ Rails.application.routes.draw do
   get '/home', to: 'welcome#home'
   root :to => 'welcome#home'
 
-  get '/login', to: 'sessions#new', as: 'login'
+  get 'login', to: redirect('auth/google_oauth2'), as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  match 'auth/spotify/callback', to: 'sessions#create'
-  match 'auth/failure', to: redirect('/')
+  get 'auth/google_oauth2/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+
   
   resources :sessions 
   resources :songs
