@@ -1,15 +1,12 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
 
     def new 
         @user = User.new 
     end
     
     def show
-      if current_user
-        @user = current_user 
-      else
-        redirect_to root_url 
-      end
+      @user = current_user
     end
 
     def create 

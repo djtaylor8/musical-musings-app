@@ -72,3 +72,6 @@ gem 'omniauth-google-oauth2', '~> 0.8.2'
 gem 'figaro'
 
 gem 'securerandom'
+
+#route authorizations
+gem 'cancancan'
