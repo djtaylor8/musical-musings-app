@@ -1,5 +1,6 @@
-class ApplicationController < ActionController::Base
-    helper_method :current_user, :authorize  
+class ApplicationController < ActionController::Base 
+    before_action :authorize 
+    helper_method :current_user, :user_signed_in?  
 
     def current_user
       user ||= User.find(session[:user_id]) if session[:user_id]
@@ -10,7 +11,7 @@ class ApplicationController < ActionController::Base
     end
 
     def authorize
-      redirect_to login_url
+      redirect_to root_url, flash: { :alert => "Not authorized - please login or create account!" } if current_user.nil?
     end
 
 end
