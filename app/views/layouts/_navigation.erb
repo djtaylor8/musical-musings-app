@@ -8,19 +8,12 @@
       <li class="nav-item active">
         <a class="nav-link" href="<%= root_url %>">Home</a>
       </li>
-      <% if current_user %>
+      <% if @user %>
       <li class="nav-item">
-        <a class="nav-link" href="<%= user_path(current_user) %>"><%= current_user.name %>'s Profile</a>
+        <a class="nav-link" href="<%= user_path(@user) %>"><%= @user.name %>'s Profile</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<%= logout_path %>">Log Out</a>
-      </li>
-      <% else %>
-      <li class="nav-item">
-        <a class="nav-link" href="<%= new_user_path %>">Sign Up</a>
-      </li>
-            <li class="nav-item">
-        <a class="nav-link" href="auth/google_oauth2">Log In</a>
       </li>
       <% end %>
             <li class="nav-item">

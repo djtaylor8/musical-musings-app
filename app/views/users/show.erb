@@ -1,5 +1,6 @@
 <h2><%= @user.name %></h2>
 <p><%= @user.bio %></p>
+
 <% @user.playlists.each do |playlist| %>
 <div class="card text-black bg-light mb-3" style="max-width: 18rem;">
   <div class="card-header">Playlist</div>
@@ -7,6 +8,10 @@
     <h5 class="card-title"><%= playlist.title %></h5>
     <a href="<%= user_playlist_path(@user, playlist) %>" class="btn btn-primary">View Playlist</a>
   </div>
-  <% end %>
+ </div>
+<% end %>
+
+<div><%= link_to "Create Playlist", new_playlist_path %>
+<%= link_to "Edit Profile", edit_user_path(@user) %>
+<%= link_to "Delete Profile", @user, method: :delete, data: { confirm: 'Are you sure?'} %>
 </div>
-<%= link_to "Create Playlist", new_playlist_path %>

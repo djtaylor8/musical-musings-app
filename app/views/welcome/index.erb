@@ -2,5 +2,15 @@
    <p class="lead text-muted">Share your stories through music</p>
      <p>
         <a href="<%= new_user_path %>" class="btn btn-primary my-2">Sign Up</a>
-        <a href="auth/google_oauth2" class="btn btn-secondary my-2">Login</a>
-     </p>
+        <a href="/login" class="btn btn-secondary my-2">Login</a>
+        <hr>
+        <div class="row">
+           <div class="col-md-3">
+            <a class="btn btn-outline-dark" href="auth/google_oauth2" role="button" style="text-transform:none">
+               <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                  Sign Up or Login with Google
+            </a>
+           </div>
+         </div>
+
+      </p>
