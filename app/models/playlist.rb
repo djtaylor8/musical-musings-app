@@ -11,4 +11,8 @@ class Playlist < ApplicationRecord
     validates :title, :story, presence: true
     validates_uniqueness_of :title, :story 
     validates :story, length: { minimum: 1, maximum: 5000, too_long: "%{count} characters is the maximum allowed" }
+
+    def self.recent
+      where('created_at > ?', Time.now-30.days.ago).order('created_at DESC')
+    end
 end

@@ -1,6 +1,10 @@
 class PlaylistsController < ApplicationController
   load_and_authorize_resource
 
+    def recent 
+      @playlists = Playlist.recent 
+    end
+  
     def index 
       @playlists = Playlist.all 
     end

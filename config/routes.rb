@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'auth/google_oauth2/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
 
+  get 'recent-playlists', to: 'playlists#recent'
   
   resources :sessions 
   resources :songs
