@@ -7,7 +7,7 @@ class User < ApplicationRecord
     
     validates :name, :email, presence: true
     validates_uniqueness_of :email 
-    validates :bio, length: { minimum: 1, maximum: 500, too_long: "%{count} characters is the maximum allowed" }
+    validates :bio, length: { maximum: 500, too_long: "%{count} characters is the maximum allowed" }
 
     has_secure_password
 
