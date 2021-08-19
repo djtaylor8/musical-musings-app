@@ -15,4 +15,8 @@ class Playlist < ApplicationRecord
     def self.recent
       where('created_at > ?', Time.now-30.days.ago).order('created_at DESC')
     end
+
+    def date 
+      self.updated_at.strftime("Updated on %m/%d/%Y at %I:%M%p")
+    end
 end

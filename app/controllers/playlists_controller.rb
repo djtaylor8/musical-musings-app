@@ -1,4 +1,5 @@
 class PlaylistsController < ApplicationController
+  skip_before_action :authorize, :only => [:index, :recent]
   load_and_authorize_resource
 
     def recent 

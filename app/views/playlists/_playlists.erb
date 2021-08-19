@@ -4,7 +4,8 @@
 <div class="card border-primary mb-3" style="width: 20rem;">
   <div class="card-body">
     <h5 class="card-title"><%= p.title %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= p.user.name %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Created by: <%= p.user.name %></h6>
+    <p class="card-subtitle mb-2 text-muted"><small><%= p.date %></small></p>
     <a href="<%= playlist_path(p) %>" class="card-link">View Playlist</a>
   </div>
 </div>

@@ -1,4 +1,5 @@
 <h1>Edit Playlist</h1>
+<%= render 'errors' %>
 <%= bootstrap_form_for(@playlist) do |f| %>
 <%= f.text_field :title, label_as_placeholder: true %>
 <br>
@@ -30,3 +31,4 @@
 </div>
 <%= f.submit "Edit Playlist" %>
 <% end %>
+<%= link_to 'Back', url_for(:back) %>
