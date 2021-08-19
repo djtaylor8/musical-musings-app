@@ -7,7 +7,8 @@ class Ability
       user ||= User.new # guest user (not logged in)
       
       can :manage, User, id: user.id
-
+      can :manage, Playlist, user_id: user.id
+      can :read, Playlist, :all  
 
 
     # Define abilities for the passed in user here. For example:
