@@ -10,6 +10,7 @@
     <% @playlists.each.with_index(0) do |p, index| %>
     <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
       <div class="card border-primary mx-auto" style="width: 20rem;">
+        <img class="card-img-top" src="<%= p.image_url %>" alt="">
         <div class="card-body">
             <h5 class="card-title"><%= p.title %></h5>
             <h6 class="card-subtitle mb-2 text-muted">Created by: <%= p.user.name %></h6>

@@ -1,7 +1,15 @@
-<div>
-<h2><%= @playlist.title %></h2>
-<p><%= @playlist.story %></p>
+<div class="d-flex justify-content-center">
+<div class="card mb-3">
+ <img src="<%= @playlist.image_url %>" alt="" style="max-height: 18rem;" >
+  <div class="card-body">
+    <h5 class="card-title"><%= @playlist.title %></h5>
+    <p class="card-text"><%= @playlist.story %></p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
 </div>
+</div>
+
+
 
 <div class="table-wrapper-scroll-y my-custom-scrollbar align-content-center">
 <table class="table table-sm">

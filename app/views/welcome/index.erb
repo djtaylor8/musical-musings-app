@@ -1,4 +1,6 @@
-<h1 class="fw-light">Musical Musings</h1>
+<div class="row h-100">
+<div class="col-md-12 my-auto">
+<h1 class="display-4">Musical Musings</h1>
    <p class="lead text-muted">Share your stories through music</p>
    <% if !logged_in? %>
      <p>
@@ -13,4 +15,6 @@
       <% else %>
          <a href="<%= user_path(@user) %>" class="btn btn-primary my-2">View Your Profile</a>
       <% end %>
+   </div>
+</div>
 
