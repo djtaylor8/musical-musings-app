@@ -1,14 +1,39 @@
-<div class="card-deck">
 
-<% @playlists.each do |p| %>
-<div class="card border-primary mb-3" style="width: 20rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= p.title %></h5>
-    <h6 class="card-subtitle mb-2 text-muted">Created by: <%= p.user.name %></h6>
-    <p class="card-subtitle mb-2 text-muted"><small><%= p.date %></small></p>
-    <a href="<%= playlist_path(p) %>" class="card-link">View Playlist</a>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <% @playlists.each.with_index(0) do |p, index| %>
+      <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>" class="<%= index.zero? ? 'active' : '' %>"></li>
+    <% end %>
+  </ol>
+  <div class="carousel-inner">
+    <% @playlists.each.with_index(0) do |p, index| %>
+    <div class="carousel-item <%= index.zero? ? 'active' : '' %>">
+      <div class="card border-primary mx-auto" style="width: 20rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%= p.title %></h5>
+            <h6 class="card-subtitle mb-2 text-muted">Created by: <%= p.user.name %></h6>
+            <p class="card-subtitle mb-2 text-muted"><small><%= p.date %></small></p>
+            <a href="<%= playlist_path(p) %>" class="card-link">View Playlist</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
-<% end %>
 
-</div>
+<script type="text/javascript">
+  $(document).on('turbolinks:load', function(){
+     $('.carousel').carousel({
+        interval: 4000
+     });
+  });
+</script>
