@@ -5,6 +5,11 @@ class ApplicationController < ActionController::Base
     rescue_from CanCan::AccessDenied do |exception|
       redirect_to user_path(current_user), alert: exception.message
     end
+
+    rescue_from ActiveRecord::RecordNotFound do |exception| 
+      redirect_to user_path(current_user), alert: "You are not authorized to access this page" 
+    end 
+
   
     
     def current_user
