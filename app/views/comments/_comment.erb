@@ -10,8 +10,10 @@
         </p>
       </div>
     </div>
+    <% if can? :manage, comment %>
      <%= link_to 'Delete', [comment.playlist, comment], :method => :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
   </article>
+   <% end %>
   <% end %>
 </div>
 

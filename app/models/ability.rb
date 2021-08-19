@@ -8,6 +8,8 @@ class Ability
       
       can :manage, User, id: user.id
       can :manage, Playlist, user_id: user.id
+      can :manage, Comment, user_id: user.id 
+      can :read, Comment, :all 
       can :read, Playlist, :all  
 
 

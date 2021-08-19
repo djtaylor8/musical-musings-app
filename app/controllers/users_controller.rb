@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorize, :only => [:new, :create]
   load_and_authorize_resource
 
     def new 
