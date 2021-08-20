@@ -8,8 +8,10 @@ class Ability
       
       can :manage, User, id: user.id
       can :manage, Playlist, user_id: user.id
+      can :read, Playlist, :all 
       can :manage, Comment, user_id: user.id 
-      can :read, Comment, :all 
+      can :read, Comment, :all
+
 
 
     # Define abilities for the passed in user here. For example:
