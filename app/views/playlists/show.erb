@@ -1,10 +1,10 @@
 <div class="d-flex justify-content-center">
 <div class="card mb-3">
- <img src="<%= @playlist.image_url %>" alt="" style="max-height: 18rem;" >
+ <img src="<%= @playlist.image_url %>" alt="" class="card-img-top img-fluid">
   <div class="card-body">
     <h5 class="card-title"><%= @playlist.title %></h5>
     <p class="card-text"><%= @playlist.story %></p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    <p class="card-text"><small class="text-muted"><%= @playlist.date %></small></p>
   </div>
 </div>
 </div>

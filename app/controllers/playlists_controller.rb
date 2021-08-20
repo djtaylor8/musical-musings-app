@@ -27,7 +27,7 @@ class PlaylistsController < ApplicationController
     
     def show 
       if params[:user_id]
-        @user = User.find_by(id: params[:user_id])
+        @user = current_user 
         @playlist = @user.playlists.find_by(id: params[:id])
         if @playlist.nil?
             redirect_to user_path(@user)

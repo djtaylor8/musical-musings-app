@@ -1,18 +1,20 @@
 
 <h2><%= @user.name %></h2>
 <p><%= @user.bio %></p>
-
+<hr>
 <div class="d-flex justify-content-center">
 
 <% @user.playlists.each do |playlist| %>
-<div class="card text-black bg-light m-2" style="max-width: 20rem;">
-  <div class="card-header">Playlist</div>
+<div class="d-flex justify-content-center">
+<div class="card mb-3">
+ <img src="<%= playlist.image_url %>" alt="" class="card-img-top img-fluid">
   <div class="card-body">
     <h5 class="card-title"><%= playlist.title %></h5>
-        <p class="card-subtitle mb-2 text-muted"><small><%= playlist.date %></small></p>
-        <%= link_to "View Playlist", user_playlist_path(@user, playlist) %>
+    <p class="card-text"><%= playlist.story %></p>
+    <a href="<%= playlist_path(playlist) %>" class="card-link">View Playlist</a>
   </div>
- </div>
+</div>
+</div>
  <% end %>
 
 </div>
