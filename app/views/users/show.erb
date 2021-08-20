@@ -1,19 +1,21 @@
+
 <h2><%= @user.name %></h2>
 <p><%= @user.bio %></p>
 
+<div class="d-flex justify-content-center">
+
 <% @user.playlists.each do |playlist| %>
-<div class="card text-black bg-light mb-3" style="max-width: 18rem;">
+<div class="card text-black bg-light m-2" style="max-width: 20rem;">
   <div class="card-header">Playlist</div>
   <div class="card-body">
     <h5 class="card-title"><%= playlist.title %></h5>
         <p class="card-subtitle mb-2 text-muted"><small><%= playlist.date %></small></p>
-    <a href="<%= user_playlist_path(@user, playlist) %>" class="btn btn-primary">View Playlist</a>
+        <%= link_to "View Playlist", user_playlist_path(@user, playlist) %>
   </div>
  </div>
-<% end %>
+ <% end %>
 
-<div><%= link_to "Create Playlist", new_user_playlist_path(@user) %>
-<%= link_to "Edit Profile", edit_user_path(@user) %>
-<%= link_to "Delete Profile", @user, method: :delete, data: { confirm: 'Are you sure?'} %>
-<%= link_to 'Back', url_for(:back) %>
 </div>
+
+<%= render 'links' %>
+

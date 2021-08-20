@@ -1,0 +1,10 @@
+<div class="links">
+<ul>
+<li><%= link_to "Create Playlist", new_user_playlist_path(@user) %></li>
+<li><%= link_to "View Comment History", user_comments_path(@user) %></li>
+<li><%= link_to "Edit Profile", edit_user_path(@user) %></li>
+<li><%= link_to "Delete Profile", @user, method: :delete, data: { confirm: 'Are you sure?'} %></li>
+<li><%= link_to 'Back', url_for(:back) %></li>
+</ul>
+</div>
+

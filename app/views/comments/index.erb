@@ -1,11 +1,16 @@
 <section class="section comments">
     <div class="container">
-        <h2 class="subtitle is-5"><strong><%= @playlist.comments.count %></strong> Comments</h2>
-        <%= render @playlist.comments %>
+    <% if @user %>
+     <h2 class="subtitle is-5">Comments</h2>
+     <%= render 'user_comments' %>
+     <% else %>
+    <h2 class="subtitle is-5"><strong><%= @playlist.comments.count %></strong> Comments</h2>
+     <%= render @playlist.comments %>
         <div class="comment-form">
             <hr />
             <h3 class="subtitle is-3">Leave a comment</h3>
              <%= render 'form', locals: { comment: @comment } %>
         </div>
+        <% end %>
     </div>
 </section>

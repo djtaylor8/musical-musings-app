@@ -1,0 +1,22 @@
+    <div class="container justify-content-center">
+		<div class="col-md-12">
+		    <div class="blog-comment">
+                <hr/>
+                <% @user.comments. each do |c| %>
+				<ul class="comments">
+				<li class="clearfix">
+				  <div class="post-comments">
+				      <p class="meta"><%= c.date %> <%= link_to "#{@user.name}", user_path(@user) %> says : <i class="pull-right"></i></p>
+				      <p>
+                        <%= c.content %> 
+				      </p>
+                      <%= link_to "View #{c.playlist.title}", playlist_path(c.playlist) %>
+				  </div>
+				</li>
+				
+				</li>
+				</ul>
+                <% end %>
+			</div>
+		</div>
+	</div>

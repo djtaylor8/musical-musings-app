@@ -1,8 +1,12 @@
 class CommentsController < ApplicationController
     
-    def index  
-      @playlist = Playlist.find(params[:playlist_id])
-      @comment = @playlist.comments.build
+    def index
+      if params[:user_id]
+        @user = current_user 
+      else
+        @playlist = Playlist.find(params[:playlist_id])
+        @comment = @playlist.comments.build
+      end 
     end
     
     def create

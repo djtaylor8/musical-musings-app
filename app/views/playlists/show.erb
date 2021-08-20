@@ -9,8 +9,6 @@
 </div>
 </div>
 
-
-
 <div class="table-wrapper-scroll-y my-custom-scrollbar align-content-center">
 <table class="table table-sm">
 <thead>
@@ -33,13 +31,7 @@
 <% end %>
 </tbody>
 </table>
-<% if can? :manage, @playlist %>
-<%= link_to "Add Songs", new_search_path, style: 'color:#FFFFFF;' %>
-<%= link_to "Edit Playlist", edit_user_playlist_path(@playlist), style: 'color:#FFFFFF;' %>
-<%= link_to "Delete Playlist", playlist_path(@playlist), data: {method: :delete}, style: 'color:#FFFFFF;' %>
-<% end %>
-<%= link_to "Comments", playlist_comments_path(@playlist), style: 'color:#FFFFFF;' %>
-<%= link_to 'Back', url_for(:back) %>
+<%= render 'links' %>
 </div>
 
 
