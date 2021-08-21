@@ -1,6 +1,6 @@
 <div class="links">
-<% if can? :manage, @playlist %>
 <ul>
+<% if can? :manage, @playlist %>
 <li><%= link_to "Add Songs", new_search_path %></li>
 <li><%= link_to "Edit Playlist", edit_user_playlist_path(@playlist) %></li>
 <li><%= link_to "Delete Playlist", playlist_path(@playlist), data: {method: :delete} %></li>
