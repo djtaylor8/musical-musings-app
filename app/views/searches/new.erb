@@ -1,6 +1,6 @@
 <h1>Find Songs</h1>
 <%= bootstrap_form_for(@search) do |f| %>
-<%= f.text_field :keywords, label_as_placeholder: true %>
+<%= f.text_field :keywords, placeholder: "Search by Song Title or Artist", hide_label: true %>
 <br>
 <%= f.submit "Submit" %>
 <% end %>
