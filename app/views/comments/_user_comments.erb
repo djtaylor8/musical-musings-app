@@ -1,4 +1,4 @@
-    <div class="container justify-content-center">
+<div class="container justify-content-center">
 		<div class="col-md-12">
 		    <div class="playlist-comment">
                 <hr/>
@@ -6,17 +6,16 @@
 				<ul class="comments">
 				<li class="clearfix">
 				  <div class="p-comments">
-				      <p class="meta"><%= c.date %> <%= link_to "#{@user.name}", user_path(@user) %> says : <i class="pull-right"></i></p>
-				      <p>
-                        <%= c.content %> 
-				      </p>
-                      <%= link_to "View #{c.playlist.title}", playlist_path(c.playlist) %>
+				    <p class="meta"><%= c.date %> <%= link_to "#{@user.name}", user_path(@user) %> says : <i class="pull-right"></i></p>
+					<p>
+                    <%= c.content %> 
+				    </p>
+                    <%= link_to "View #{c.playlist.title}", playlist_path(c.playlist) %>
 				  </div>
 				</li>
-				
 				</li>
 				</ul>
 			</div>
 			<% end %>
 		</div>
-	</div>
+</div>

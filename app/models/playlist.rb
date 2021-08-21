@@ -19,4 +19,5 @@ class Playlist < ApplicationRecord
     def date 
       self.updated_at.strftime("Updated on %m/%d/%Y at %I:%M%p")
     end
+    
 end

@@ -1,21 +1,21 @@
- <div class="container justify-content-center">
-	<div class="col-md-12">
-	 <div class="playlist-comment">
-    <hr/>
-      <% @playlist.comments.each do |c| %>
-       <% unless !c.persisted? %>
-			<ul class="comments">
-			  <li class="clearfix">
-				  <div class="p-comments">
-				    <p class="meta"><%= c.date %> <%= link_to "#{c.user.name}", user_path(c.user) %> says : <i class="pull-right"></i></p>
-				    <p>
-            <%= c.content %> 
-				    </p>
-				  </div>
-				 </li>
+<div class="container justify-content-center">
+  <div class="col-md-12">
+	<div class="playlist-comment">
+      <hr/>
+        <% @playlist.comments.each do |c| %>
+        <% unless !c.persisted? %>
+		  <ul class="comments">
+			<li class="clearfix">
+			   <div class="p-comments">
+				<p class="meta"><%= c.date %> <%= link_to "#{c.user.name}", user_path(c.user) %> says : <i class="pull-right"></i></p>
+			    <p>
+            	<%= c.content %> 
+				</p>
+				</div>
+				</li>
 				<% end %>
-				</ul>
-       <% end %>
-			</div>
+			</ul>
+       		<% end %>
 		</div>
 	</div>
+</div>
