@@ -1,19 +1,21 @@
-
-<div class="box">
-  <article class="media">
-    <div class="media-content">
-      <div class="content">
-        <p>
-        <% unless !comment.persisted? %>
-          <strong><%= comment.user.name %>:</strong>
-          <%= comment.content %>
-        </p>
-      </div>
-    </div>
-    <% if can? :manage, comment %>
-     <%= link_to 'Delete', [comment.playlist, comment], :method => :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
-  </article>
-   <% end %>
-  <% end %>
-</div>
-
+ <div class="container justify-content-center">
+	<div class="col-md-12">
+	 <div class="playlist-comment">
+    <hr/>
+      <% @playlist.comments.each do |c| %>
+       <% unless !c.persisted? %>
+			<ul class="comments">
+			  <li class="clearfix">
+				  <div class="p-comments">
+				    <p class="meta"><%= c.date %> <%= link_to "#{c.user.name}", user_path(c.user) %> says : <i class="pull-right"></i></p>
+				    <p>
+            <%= c.content %> 
+				    </p>
+				  </div>
+				 </li>
+				<% end %>
+				</ul>
+       <% end %>
+			</div>
+		</div>
+	</div>

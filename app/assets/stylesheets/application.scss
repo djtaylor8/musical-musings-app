@@ -59,12 +59,12 @@ a {
 }
 
 
-.blog-comment ul{
+.playlist-comment ul{
 	list-style-type: none;
 	padding: 0;
 }
 
-.blog-comment .post-comments{
+.playlist-comment .p-comments{
 	border: 1px solid #eee;
     margin-bottom: 20px;
 	margin-right: 0px;
@@ -79,7 +79,7 @@ a {
 	position: relative;
 }
 
-.blog-comment .meta {
+.playlist-comment .meta {
 	font-size: 13px;
 	color: #aaaaaa;
 	padding-bottom: 8px;
@@ -87,7 +87,7 @@ a {
 	border-bottom: 1px solid #eee;
 }
 
-.blog-comment ul.comments ul{
+.playlist-comment ul.comments ul{
 	list-style-type: none;
 	padding: 0;
 }
