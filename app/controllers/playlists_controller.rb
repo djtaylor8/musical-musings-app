@@ -43,12 +43,13 @@ class PlaylistsController < ApplicationController
     end
 
     def update
-      @playlist = Playlist.find(params[:id])
-      if params[:playlist][:song] 
+      if params[:playlist][:id]
+        @playlist = Playlist.find_by(id: params[:playlist][:id]) 
         @song = Song.find_by(id: params[:playlist][:song])
         @playlist.songs << @song 
         @playlist.save
       else
+        @playlist = Playlist.find(params[:id])
         @playlist.update(playlist_params)
         @playlist.save
       end 
