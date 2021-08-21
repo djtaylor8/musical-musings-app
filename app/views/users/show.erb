@@ -1,23 +1,24 @@
-
-<h2><%= @user.name %></h2>
+<h2><%= @user.name %>'s Playlists</h2>
 <p><%= @user.bio %></p>
 <hr>
-<div class="d-flex justify-content-center">
-
-<% @user.playlists.each do |playlist| %>
-<div class="d-flex justify-content-center">
-<div class="card mb-3">
- <img src="<%= playlist.image_url %>" alt="" class="card-img-top img-fluid">
-  <div class="card-body">
-    <h5 class="card-title"><%= playlist.title %></h5>
-    <p class="card-text"><%= playlist.story %></p>
-    <a href="<%= user_playlist_path(playlist) %>" class="card-link">View Playlist</a>
-  </div>
-</div>
-</div>
- <% end %>
-
+<div class="container-fluid">
+    <div class="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+			
+    <% @user.playlists.each do |p| %>
+			<div class="col-5">
+				<div class="card card-block">
+          <img src="<%= p.image_url %>" class="card-img-top" alt="">
+          <div class="card-body">
+            <h5><%= p.title %></h5>
+            <p class="card-text"><small class="text-muted"><%= p.date %></small></p>
+            <a href="<%= playlist_path(p) %>" class="card-link">View Playlist</a>
+          </div>
+        </div>
+			</div>
+    <% end %>
+    </div>
 </div>
 
 <%= render 'links' %>
+
 
