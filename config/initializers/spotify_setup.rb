@@ -1,1 +1,1 @@
-RSpotify::authenticate("4e9a853adc514a57a2a1eac8dcd7b1fb", "389c16c00e134691a1298826f517f62f")
+RSpotify::authenticate(ENV['SPOTIFY_ID'], ENV['SPOTIFY_KEY'])
