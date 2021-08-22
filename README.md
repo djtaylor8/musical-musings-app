@@ -1,24 +1,25 @@
-# README
+ # Musical Musings - Rails App Portfolio Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Search songs, build playlists, and share your stories. This app is designed for users to combine the power of music and words all in one place with the help of the Spotify API.
 
-Things you may want to cover:
+### Installing
 
-* Ruby version
+Clone this repo, then install the required gems by running:   
+    bundle install 
 
-* System dependencies
+Next, start up the server:
+    rails s  
+    
+Navigate to http://localhost:3000, and set up your account either locally or with your Google account.  
 
-* Configuration
+## Contributing
 
-* Database creation
+Bug reports and pull requests are welcome on GitHub at https://github.com/djtaylor8/sinatra-actors-access-app. 
 
-* Database initialization
+## Authors
 
-* How to run the test suite
+* **DJ Taylor** (https://github.com/djtaylor8)
 
-* Services (job queues, cache servers, search engines, etc.)
+## License
 
-* Deployment instructions
-
-* ...
+This project is licensed under the MIT License - see the LICENSE file for details.
