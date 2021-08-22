@@ -75,3 +75,6 @@ gem 'securerandom'
 
 #route authorizations
 gem 'cancancan'
+
+#email validation
+gem 'email_validator'

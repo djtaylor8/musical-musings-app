@@ -22,6 +22,6 @@ class ApplicationController < ActionController::Base
 
     def authorize
       redirect_to root_url, flash: { :alert => "Please login or create account!" } if current_user.nil?
-    end    
+    end
 
 end
