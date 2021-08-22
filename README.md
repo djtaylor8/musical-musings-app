@@ -14,7 +14,7 @@ Next, start up the server:
     rails s  
     ```
     
-Navigate to http://localhost:3000, and set up your account either locally or with your Google account.  
+Navigate to http://localhost:3000, and set up your account either locally or with your Google account. The database is seeded and ready to go with some examples.
 
 ## Contributing
 
