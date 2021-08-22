@@ -4,11 +4,15 @@ Search songs, build playlists, and share your stories. This app is designed for 
 
 ### Installing
 
-Clone this repo, then install the required gems by running:   
+Clone this repo, then install the required gems by running:
+    ```
     bundle install 
+    ```
 
 Next, start up the server:
+    ```
     rails s  
+    ```
     
 Navigate to http://localhost:3000, and set up your account either locally or with your Google account.  
 
