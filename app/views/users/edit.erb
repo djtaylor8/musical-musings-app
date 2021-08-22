@@ -1,6 +1,7 @@
 <h1>Edit Profile</h1>
 <%= render 'errors' %>
 <%= bootstrap_form_for(@user) do |f| %>
+<div class="form">
 <%= f.text_field :name, label_as_placeholder: true %>
 <br>
 <%= f.text_field :email, label_as_placeholder: true  %>
@@ -9,6 +10,7 @@
 <br>
 <%= f.submit "Submit" %>
 <% end %>
+</div>
 <%= link_to 'Back', url_for(:back) %>
 
 

@@ -1,4 +1,4 @@
-<h2><%= @user.name %>'s Playlists</h2>
+<h2><%= @user.name %>'s Profile</h2>
 <p><%= @user.bio %></p>
 <hr>
 <div class="container-fluid">
@@ -11,7 +11,7 @@
           <div class="card-body">
             <h5><%= p.title %></h5>
             <p class="card-text"><small class="text-muted"><%= p.date %></small></p>
-            <a href="<%= playlist_path(p) %>" class="card-link">View Playlist</a>
+            <a href="<%= user_playlist_path(@user, p) %>" class="card-link">View Playlist</a>
           </div>
         </div>
 			</div>

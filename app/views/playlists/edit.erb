@@ -11,14 +11,7 @@
 <br>
 <div class="table-wrapper-scroll-y my-custom-scrollbar align-content-center">
 <table class="table table-sm">
-<thead>
-<tr>
-  <th scope="col">Name </th>
-  <th scope="col">Artist</th>
-  <th scope="col">Genre</th>
-  <th scope="col">Remove</th>
-</tr>
-</thead>
+<%= render 'layouts/table' %>
 <tbody>
 <%= f.fields_for :songs do |ff| %>
 <tr>

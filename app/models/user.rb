@@ -1,9 +1,9 @@
 require 'securerandom'
 
 class User < ApplicationRecord
-    has_many :playlists
-    has_many :comments
-    has_many :playlist_comments, :through => :playlists, :source => :comments
+    has_many :playlists, dependent: :destroy
+    has_many :comments, dependent: :destroy
+    has_many :playlist_comments, :through => :playlists, :source => :comments, dependent: :destroy  
     
     validates :name, :email, presence: true
     validates_uniqueness_of :email 

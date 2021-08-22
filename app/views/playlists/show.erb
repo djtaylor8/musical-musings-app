@@ -11,14 +11,7 @@
 
 <div class="table-wrapper-scroll-y my-custom-scrollbar align-content-center">
 <table class="table table-sm">
-<thead>
-<tr>
-  <th scope="col">Song Name </th>
-  <th scope="col">Artist</th>
-  <th scope="col">Genre</th>
-  <th scope="col">Preview</th>
-</tr>
-</thead>
+<%= render 'layouts/table' %>
 <tbody>
 <% @playlist.songs.each do |song| %>
 <tr>

@@ -1,9 +1,9 @@
 class Playlist < ApplicationRecord
     belongs_to :user
     has_many :playlist_songs
-    has_many :songs, through: :playlist_songs
-    has_many :comments
-    has_many :users, through: :comments 
+    has_many :songs, through: :playlist_songs, dependent: :destroy 
+    has_many :comments, dependent: :destroy 
+    has_many :users, through: :comments , dependent: :destroy 
 
     accepts_nested_attributes_for :songs, allow_destroy: true
     accepts_nested_attributes_for :comments, allow_destroy: true
