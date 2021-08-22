@@ -6,7 +6,7 @@ Musical Musings is a tool for users to create and tell stories through playlists
 
 ## Users will be able to ...
 - sign up, log in, log out
-- search songs via Spotify by song title, artist, or genre
+- search songs via Spotify by song title or artist
 - create new playlists based on search results
 - create new stories thematically related to playlist songs
 - view other stories 
