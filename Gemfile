@@ -69,6 +69,7 @@ gem 'nested_form'
 #omniauth
 gem 'omniauth-google-oauth2', '~> 0.8.2'
 
+
 gem 'figaro'
 
 gem 'securerandom'
