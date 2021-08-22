@@ -13,7 +13,7 @@
 </table>
 <%= bootstrap_form_for(@playlist) do |f| %>
   <%= f.hidden_field :song, value: @song.id%>
-  <td><%= f.collection_select :id, @user.playlists.all, :id, :title, hide_label: true, include_blank: "Select playlist" %></td>
+  <td><%= f.collection_select :id, @user.playlists.all, :id, :title, hide_label: true, include_blank: "Select Playlist", selected: "Select Playlist" %></td>
   <br>
   <%= f.submit "Add Song" %>
   <% end %>
