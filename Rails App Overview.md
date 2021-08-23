@@ -1,6 +1,6 @@
 # App Overview
 
-Musical Musings is a tool for users to create and tell stories through playlists they create using Spotify.
+Musical Musings is a tool for users to create and tell stories through playlists they create using the Spotify API.
 
 # User Stories
 
