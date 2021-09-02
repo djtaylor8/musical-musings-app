@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2021_08_19_200806) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
-    t.string "content"
+    t.text "content"
     t.integer "user_id"
     t.integer "playlist_id"
     t.datetime "created_at", precision: 6, null: false
@@ -32,36 +35,36 @@ ActiveRecord::Schema.define(version: 2021_08_19_200806) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
-    t.string "title"
-    t.string "image_url"
+    t.text "title"
+    t.text "image_url"
   end
 
   create_table "searches", force: :cascade do |t|
-    t.string "keywords"
+    t.text "keywords"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "songs", force: :cascade do |t|
-    t.string "name"
-    t.string "artist"
-    t.string "genre"
-    t.string "image"
-    t.string "preview"
+    t.text "name"
+    t.text "artist"
+    t.text "genre"
+    t.text "image"
+    t.text "preview"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "spotify_id"
+    t.text "spotify_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "password_digest"
-    t.string "bio"
+    t.text "name"
+    t.text "email"
+    t.text "password_digest"
+    t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "uid"
-    t.string "provider"
+    t.text "uid"
+    t.text "provider"
   end
 
 end

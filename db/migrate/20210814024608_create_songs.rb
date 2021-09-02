@@ -1,11 +1,11 @@
 class CreateSongs < ActiveRecord::Migration[6.1]
   def change
     create_table :songs do |t|
-      t.string :title
-      t.string :artist
-      t.string :genre
-      t.string :image
-      t.string :preview
+      t.text :title
+      t.text :artist
+      t.text :genre
+      t.text :image
+      t.text :preview
 
       t.timestamps
     end
