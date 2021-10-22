@@ -2,6 +2,7 @@
 
 Search songs, build playlists, and share your stories. This app is designed for users to combine the power of music and words all in one place with the help of the Spotify API.
 
+[View Live Site Deployed on Heroku](https://musicalmusings.herokuapp.com/)
 ### Installing
 
 Clone this repo, then install the required gems by running:
